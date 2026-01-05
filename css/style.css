@@ -451,3 +451,9 @@ body {
   text-shadow: 0 1px 8px rgba(255,255,255,0.35);
 }
 
+/* Navbar logo SVG sizing */
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
