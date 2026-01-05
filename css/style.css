@@ -440,3 +440,14 @@ body {
   .hero-text h1 { font-size: 42px; }
   .location-wrapper { grid-template-columns: 1fr; }
 }
+.hero-text h1 {
+  color: #2F2A36; /* deeper charcoal, not black */
+  text-shadow: 
+    0 2px 12px rgba(255,255,255,0.25),
+    0 6px 28px rgba(0,0,0,0.25);
+}
+.hero-text p {
+  color: #3F384B;
+  text-shadow: 0 1px 8px rgba(255,255,255,0.35);
+}
+
