@@ -1,22 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath2065)"><rect width="1000" height="1000" fill="#ec80ff"></rect><g transform="matrix(7.5,0,0,7.5,50,50)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
   <defs>
     <!-- Cloud gradient -->
     <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F9EDF4"/>
-      <stop offset="100%" stop-color="#EEE8FB"/>
+      <stop offset="0%" stop-color="#F9EDF4"></stop>
+      <stop offset="100%" stop-color="#EEE8FB"></stop>
     </linearGradient>
 
     <!-- A body gradient -->
     <linearGradient id="aGradSoft" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#CBB9E8"/>
-      <stop offset="100%" stop-color="#B6A3DC"/>
+      <stop offset="0%" stop-color="#CBB9E8"></stop>
+      <stop offset="100%" stop-color="#B6A3DC"></stop>
     </linearGradient>
 
     <!-- Mask so right cloud stays behind A -->
     <mask id="aMask">
-      <rect width="100%" height="100%" fill="white"/>
-      <path
-        d="
+      <rect width="100%" height="100%" fill="white"></rect>
+      <path d="
           M60 20
           C66 24, 78 44, 88 92
           C90 100, 86 104, 78 104
@@ -27,15 +26,12 @@
           C34 104, 30 100, 32 92
           C42 44, 54 24, 60 20
           Z
-        "
-        fill="black"
-      />
+        " fill="black"></path>
     </mask>
-  </defs>
+  <clipPath id="SvgjsClipPath2065"><rect width="1000" height="1000" x="0" y="0" rx="250" ry="250"></rect></clipPath></defs>
 
   <!-- LEFT CLOUD (higher) -->
-  <path
-    d="
+  <path d="
       M24 44
       C20 38, 28 32, 38 36
       C40 30, 52 30, 54 38
@@ -43,13 +39,10 @@
       H32
       C26 48, 22 46, 24 44
       Z
-    "
-    fill="url(#cloudGrad)"
-  />
+    " fill="url(#cloudGrad)"></path>
 
   <!-- RIGHT CLOUD (lower, masked behind A) -->
-  <path
-    d="
+  <path d="
       M66 52
       C62 46, 72 42, 82 46
       C86 42, 98 46, 96 56
@@ -57,14 +50,10 @@
       H76
       C68 68, 64 60, 66 52
       Z
-    "
-    fill="url(#cloudGrad)"
-    mask="url(#aMask)"
-  />
+    " fill="url(#cloudGrad)" mask="url(#aMask)"></path>
 
   <!-- SOFT A BODY WITH ROUNDED FEET -->
-  <path
-    d="
+  <path d="
       M60 20
       C66 24, 78 44, 88 92
       C90 100, 86 104, 78 104
@@ -75,25 +64,11 @@
       C34 104, 30 100, 32 92
       C42 44, 54 24, 60 20
       Z
-    "
-    fill="url(#aGradSoft)"
-  />
+    " fill="url(#aGradSoft)"></path>
 
   <!-- DOOR -->
-  <rect
-    x="56"
-    y="72"
-    width="8"
-    height="20"
-    rx="4"
-    fill="#FFFDFB"
-  />
+  <rect x="56" y="72" width="8" height="20" rx="4" fill="#FFFDFB"></rect>
 
   <!-- DOOR KNOB -->
-  <circle
-    cx="62"
-    cy="82"
-    r="1.4"
-    fill="#6E5F86"
-  />
-</svg>
+  <circle cx="62" cy="82" r="1.4" fill="#6E5F86"></circle>
+</svg></svg></g></g></svg>
