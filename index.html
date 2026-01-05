@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Ashi’s SkyHome | Cozy 1BHK Stay in Gurgaon</title>
+  <title>Ashi’s SkyHome | Aesthetic 1BHK Stay in Gurgaon</title>
 
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -17,8 +17,9 @@
 
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar">
-  <div class="container nav-inner">
+  <div class="nav-inner">
     <div class="logo">
       <span class="logo-icon">A</span> Ashi’s SkyHome
     </div>
@@ -35,60 +36,62 @@
 <main>
 
 <!-- HERO -->
-<section id="home" class="hero reveal">
-  <div class="hero-content">
+<section id="home" class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-text">
     <h1>Ashi’s SkyHome</h1>
-    <p>A cozy pastel 1BHK retreat in the heart of Gurgaon</p>
-    <a href="#" class="btn-primary">Book on Airbnb</a>
+    <p>A soft, pastel 1BHK retreat in the heart of Gurgaon</p>
+    <a href="#" class="hero-btn">Book on Airbnb</a>
   </div>
 </section>
 
 <!-- STAY -->
-<section id="stay" class="section reveal">
-  <div class="container">
-    <h2>Your Stay</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="images/room1.jpg">
-        <h3>Entire 1BHK Flat</h3>
-        <p>Private, peaceful, and thoughtfully designed.</p>
-      </div>
-      <div class="card">
-        <img src="images/room2.jpg">
-        <h3>Everyone Welcome</h3>
-        <p>Couples, families, friends & solo travelers.</p>
-      </div>
+<section id="stay" class="section dreamy-bg reveal">
+  <h2>Your Stay</h2>
+
+  <div class="stay-cards">
+    <div class="stay-card">
+      <img src="images/room1.jpg">
+      <h3>Entire 1BHK Flat</h3>
+      <p>Private, airy, and thoughtfully styled for calm living.</p>
+    </div>
+
+    <div class="stay-card">
+      <img src="images/room2.jpg">
+      <h3>Everyone Is Welcome</h3>
+      <p>Perfect for couples, solo travelers, friends & families.</p>
     </div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" class="section light reveal">
-  <div class="container">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="images/hero.jpg">
-      <img src="images/room1.jpg">
-      <img src="images/room2.jpg">
-    </div>
+<section id="gallery" class="section reveal">
+  <h2>Gallery</h2>
+
+  <div class="gallery-grid">
+    <img src="images/hero.jpg">
+    <img src="images/room1.jpg">
+    <img src="images/room2.jpg">
+    <img src="images/room1.jpg">
   </div>
 </section>
 
 <!-- LOCATION -->
-<section id="location" class="section reveal">
-  <div class="container location-grid">
+<section id="location" class="section dreamy-bg reveal">
+  <div class="location-wrapper">
     <div class="location-text">
       <h2>Location</h2>
       <p>
-        Located in Gurgaon with quick access to offices, cafés,
-        shopping areas, and major city hotspots.
+        Located in Gurgaon with easy access to cafés, offices,
+        shopping hubs, and city hotspots.
       </p>
       <p class="location-note">
-        Easy cab access • Peaceful neighborhood • Safe surroundings
+        Peaceful neighborhood • Easy cab access • Safe surroundings
       </p>
     </div>
 
-    <div class="map-box">
+    <div class="map-card">
       <iframe
         src="https://www.google.com/maps?q=Gurgaon&output=embed"
         loading="lazy">
@@ -98,16 +101,21 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section light reveal">
-  <div class="container">
-    <h2>Get in Touch</h2>
-    <p>Call or WhatsApp us anytime for availability.</p>
+<section id="contact" class="section reveal contact-section">
+  <h2>Let’s Stay Connected</h2>
+  <p>For availability & queries</p>
 
-    <a href="https://wa.me/917009023477" class="btn-secondary">
-      Call / WhatsApp
-    </a>
+  <a href="https://wa.me/917009023477" class="contact-btn">
+    Call / WhatsApp
+  </a>
 
-    <p class="email">info@ashiskyhome.com</p>
+  <p class="email">info@ashiskyhome.com</p>
+
+  <!-- SOCIAL ICONS -->
+  <div class="socials">
+    <a href="#" class="social ig"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="social fb"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="social yt"><i class="fab fa-youtube"></i></a>
   </div>
 </section>
 
@@ -122,19 +130,15 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- SCROLL ANIMATION SCRIPT -->
+<!-- SCROLL ANIMATION -->
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('active');
     });
   }, { threshold: 0.15 });
 
-  reveals.forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
