@@ -6,8 +6,8 @@
 
   <title>Ashi’s SkyHome | Aesthetic 1BHK Stay in Gurgaon</title>
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -17,7 +17,6 @@
 
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-inner">
     <div class="logo">
@@ -101,21 +100,26 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section reveal contact-section">
+<section id="contact" class="section contact-section reveal">
   <h2>Let’s Stay Connected</h2>
-  <p>For availability & queries</p>
+  <p class="contact-sub">Reach out anytime</p>
 
-  <a href="https://wa.me/917009023477" class="contact-btn">
-    Call / WhatsApp
-  </a>
+  <div class="contact-actions">
+    <a href="tel:+917009023477" class="contact-btn call">
+      <i class="fa-solid fa-phone"></i> Call
+    </a>
 
-  <p class="email">info@ashiskyhome.com</p>
+    <a href="mailto:info@ashiskyhome.com" class="contact-btn mail">
+      <i class="fa-solid fa-envelope"></i> Mail
+    </a>
+  </div>
 
   <!-- SOCIAL ICONS -->
   <div class="socials">
     <a href="#" class="social ig"><i class="fab fa-instagram"></i></a>
     <a href="#" class="social fb"><i class="fab fa-facebook-f"></i></a>
     <a href="#" class="social yt"><i class="fab fa-youtube"></i></a>
+    <a href="#" class="social wa"><i class="fab fa-whatsapp"></i></a>
   </div>
 </section>
 
@@ -125,17 +129,9 @@
   © 2026 Ashi’s SkyHome. All rights reserved.
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/917009023477" class="whatsapp-float">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- SCROLL ANIMATION -->
 <script>
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('active');
-    });
+    entries.forEach(e => e.isIntersecting && e.target.classList.add('active'));
   }, { threshold: 0.15 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
