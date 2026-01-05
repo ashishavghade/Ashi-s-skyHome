@@ -9,6 +9,58 @@ body {
   color: #3A3442;
   font-family: 'Poppins', sans-serif;
 }
+/* HERO SEARCH — placement & style fix only */
+.hero-search {
+  margin: 26px auto 36px;
+  display: flex;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 50px;
+  max-width: 520px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(242,184,198,0.75),
+    rgba(201,182,228,0.75)
+  );
+  backdrop-filter: blur(10px);
+}
+
+.hero-search input {
+  flex: 1;
+  border: none;
+  background: rgba(255,255,255,0.6);
+  border-radius: 30px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #4E445E;
+}
+
+.hero-search input::placeholder {
+  color: #7A6E8C;
+}
+
+.hero-search button {
+  border: none;
+  border-radius: 30px;
+  padding: 10px 22px;
+  background: rgba(255,255,255,0.4);
+  color: #3A3442;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.hero-search button:hover {
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Ensure Airbnb button sits clearly below */
+.hero-btn {
+  display: inline-block;
+  margin-top: 6px;
+}
 
 /* NAVBAR */
 .navbar {
@@ -304,6 +356,41 @@ body {
   color: white;
   text-align: center;
   padding: 25px;
+}
+/* FOOTER LINKS — aesthetic fix only */
+.footer-links {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: rgba(201,182,228,0.85);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  margin: 0 10px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: rgba(201,182,228,0.6);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #F2B8C6;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
 }
 
 /* ANIMATIONS */
