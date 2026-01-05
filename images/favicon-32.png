@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <!-- Cloud gradient -->
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9EDF4"/>
+      <stop offset="100%" stop-color="#EEE8FB"/>
+    </linearGradient>
+
+    <!-- A body gradient -->
+    <linearGradient id="aGradSoft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CBB9E8"/>
+      <stop offset="100%" stop-color="#B6A3DC"/>
+    </linearGradient>
+
+    <!-- Mask so right cloud stays behind A -->
+    <mask id="aMask">
+      <rect width="100%" height="100%" fill="white"/>
+      <path
+        d="
+          M60 20
+          C66 24, 78 44, 88 92
+          C90 100, 86 104, 78 104
+          H70
+          C64 104, 62 96, 60 90
+          C58 96, 56 104, 50 104
+          H42
+          C34 104, 30 100, 32 92
+          C42 44, 54 24, 60 20
+          Z
+        "
+        fill="black"
+      />
+    </mask>
+  </defs>
+
+  <!-- LEFT CLOUD (higher) -->
+  <path
+    d="
+      M24 44
+      C20 38, 28 32, 38 36
+      C40 30, 52 30, 54 38
+      C60 38, 62 44, 58 48
+      H32
+      C26 48, 22 46, 24 44
+      Z
+    "
+    fill="url(#cloudGrad)"
+  />
+
+  <!-- RIGHT CLOUD (lower, masked behind A) -->
+  <path
+    d="
+      M66 52
+      C62 46, 72 42, 82 46
+      C86 42, 98 46, 96 56
+      C102 56, 104 64, 96 68
+      H76
+      C68 68, 64 60, 66 52
+      Z
+    "
+    fill="url(#cloudGrad)"
+    mask="url(#aMask)"
+  />
+
+  <!-- SOFT A BODY WITH ROUNDED FEET -->
+  <path
+    d="
+      M60 20
+      C66 24, 78 44, 88 92
+      C90 100, 86 104, 78 104
+      H70
+      C64 104, 62 96, 60 90
+      C58 96, 56 104, 50 104
+      H42
+      C34 104, 30 100, 32 92
+      C42 44, 54 24, 60 20
+      Z
+    "
+    fill="url(#aGradSoft)"
+  />
+
+  <!-- DOOR -->
+  <rect
+    x="56"
+    y="72"
+    width="8"
+    height="20"
+    rx="4"
+    fill="#FFFDFB"
+  />
+
+  <!-- DOOR KNOB -->
+  <circle
+    cx="62"
+    cy="82"
+    r="1.4"
+    fill="#6E5F86"
+  />
+</svg>
