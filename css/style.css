@@ -308,11 +308,11 @@ body {
   border-radius: 26px;
   box-shadow: 0 35px 70px rgba(0,0,0,0.12);
 }
+
 .location-address {
-  margin: 16px 0 8px;
+  margin-top: 14px;
   font-size: 14px;
-  color: #5F566E;
-  font-weight: 500;
+  color: #5B5169;
   letter-spacing: 0.3px;
 }
 
