@@ -58,7 +58,34 @@
       <button type="submit">Check Availability</button>
     </form>
 
-    <a href="#" class="hero-btn">Book on Airbnb</a>
+  <div class="hero-actions">
+
+  <!-- WhatsApp -->
+  <a 
+    href="https://wa.me/919217787941?text=Hi%2C%20I%27m%20interested%20in%20Ashi%E2%80%99s%20SkyHome.%20Can%20you%20share%20availability%3F"
+    target="_blank"
+    class="hero-action whatsapp">
+    <i class="fab fa-whatsapp"></i>
+    WhatsApp Enquiry
+  </a>
+
+  <!-- Enquiry Form trigger -->
+  <button class="hero-action enquiry" onclick="openEnquiry()">
+    <i class="fa-solid fa-pen-to-square"></i>
+    Send Enquiry
+  </button>
+
+  <!-- Airbnb -->
+  <a 
+    href="https://www.airbnb.com"
+    target="_blank"
+    class="hero-action airbnb">
+    <i class="fa-brands fa-airbnb"></i>
+    Book on Airbnb
+  </a>
+
+</div>
+
   </div>
 </section>
 
@@ -186,6 +213,13 @@
   }, { threshold: 0.15 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+function openEnquiry() {
+  document.getElementById('enquiryModal').style.display = 'flex';
+}
+function closeEnquiry() {
+  document.getElementById('enquiryModal').style.display = 'none';
+}
+
 </script>
 
 </body>
