@@ -59,11 +59,14 @@
     </form>
 
   <div class="hero-actions">
-  <button class="hero-action enquiry" onclick="openEnquiry()">
-    <i class="fa-solid fa-pen-to-square"></i>
-    Enquire Now
+
+  <!-- WhatsApp Enquiry -->
+  <button class="hero-action whatsapp" onclick="openEnquiry()">
+    <i class="fab fa-whatsapp"></i>
+    Enquire on WhatsApp
   </button>
 
+  <!-- Airbnb -->
   <a 
     href="https://www.airbnb.com"
     target="_blank"
@@ -71,7 +74,9 @@
     <i class="fa-brands fa-airbnb"></i>
     Book on Airbnb
   </a>
+
 </div>
+
 
   </div>
 </section>
@@ -195,86 +200,69 @@
 </footer>
 
 <script>
-  // Reveal animations
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('active');
-    });
+    entries.forEach(e => e.isIntersecting && e.target.classList.add('active'));
   }, { threshold: 0.15 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Enquiry modal open / close
   function openEnquiry() {
-    const modal = document.getElementById('enquiryModal');
-    if (modal) modal.style.display = 'flex';
+    document.getElementById('enquiryModal').style.display = 'flex';
   }
 
   function closeEnquiry() {
-    const modal = document.getElementById('enquiryModal');
-    if (modal) modal.style.display = 'none';
+    document.getElementById('enquiryModal').style.display = 'none';
   }
 
-  // Build enquiry text
-  function getEnquiryText() {
-    const name = document.getElementById('enqName')?.value || '';
-    const email = document.getElementById('enqEmail')?.value || '';
-    const checkin = document.getElementById('enqCheckin')?.value || '';
-    const checkout = document.getElementById('enqCheckout')?.value || '';
-    const message = document.getElementById('enqMessage')?.value || '';
+  function sendViaWhatsApp() {
+    const checkin = document.getElementById('enqCheckin').value;
+    const checkout = document.getElementById('enqCheckout').value;
+    const message = document.getElementById('enqMessage').value;
 
-    return `Name: ${name}
-Email: ${email}
+    if (!checkin || !checkout) {
+      alert('Please select check-in and check-out dates');
+      return;
+    }
+
+    const text = encodeURIComponent(
+`Hi, I'm interested in Ashi’s SkyHome.
+
 Check-in: ${checkin}
 Check-out: ${checkout}
-Message: ${message}`;
-  }
-
-  // Send via WhatsApp
-  function sendViaWhatsApp() {
-    const text = encodeURIComponent(
-      `Hi, I'm interested in Ashi’s SkyHome.\n\n${getEnquiryText()}`
+Message: ${message || '—'}
+`
     );
 
     window.open(`https://wa.me/919217787941?text=${text}`, '_blank');
     closeEnquiry();
   }
-
-  // Send via Email
-  function sendViaEmail() {
-    const body = encodeURIComponent(getEnquiryText());
-    window.location.href =
-      `mailto:info@ashisskyhome.com?subject=Enquiry – Ashi’s SkyHome&body=${body}`;
-    closeEnquiry();
-  }
 </script>
 
 
+
 <!-- ENQUIRY MODAL -->
-<div id="enquiryModal" class="enquiry-modal" onclick="closeEnquiry()">
-  <div class="enquiry-box" onclick="event.stopPropagation()">
-    <h3>Send an Enquiry</h3>
+<div class="enquiry-modal" id="enquiryModal">
+  <div class="enquiry-box">
 
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="4"></textarea>
+    <h3>WhatsApp Enquiry</h3>
 
-      <div style="display:flex; gap:14px; justify-content:center; margin-top:10px;">
-  <button type="button" onclick="sendViaWhatsApp()" class="send-wa">
-    <i class="fab fa-whatsapp"></i> Send via WhatsApp
-  </button>
+    <input type="date" id="enqCheckin" placeholder="Check-in date">
+    <input type="date" id="enqCheckout" placeholder="Check-out date">
 
-  <button type="button" onclick="sendViaEmail()" class="send-mail">
-    <i class="fa-solid fa-envelope"></i> Send via Email
-  </button>
-</div>
+    <textarea 
+      id="enqMessage" 
+      rows="3"
+      placeholder="Short message (optional)">
+    </textarea>
 
-    </form>
+    <button onclick="sendViaWhatsApp()">
+      Send on WhatsApp
+    </button>
 
     <button class="close-enquiry" onclick="closeEnquiry()">Close</button>
   </div>
 </div>
+
 
 </body>
 </html>
