@@ -213,14 +213,34 @@
   }, { threshold: 0.15 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-function openEnquiry() {
-  document.getElementById('enquiryModal').style.display = 'flex';
-}
-function closeEnquiry() {
-  document.getElementById('enquiryModal').style.display = 'none';
-}
 
+  function openEnquiry() {
+    const modal = document.getElementById('enquiryModal');
+    if (modal) modal.style.display = 'flex';
+  }
+
+  function closeEnquiry() {
+    const modal = document.getElementById('enquiryModal');
+    if (modal) modal.style.display = 'none';
+  }
 </script>
+
+<!-- ENQUIRY MODAL -->
+<div id="enquiryModal" class="enquiry-modal" onclick="closeEnquiry()">
+  <div class="enquiry-box" onclick="event.stopPropagation()">
+    <h3>Send an Enquiry</h3>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4"></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <button class="close-enquiry" onclick="closeEnquiry()">Close</button>
+  </div>
+</div>
 
 </body>
 </html>
