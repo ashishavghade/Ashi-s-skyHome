@@ -580,3 +580,28 @@ body {
     padding: 16px;
   }
 }
+
+/* ===== HERO ACTION BUTTON REFINEMENT (SAFE) ===== */
+
+.hero-action {
+  min-height: 46px;
+  line-height: 1;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.hero-action i {
+  font-size: 16px;
+}
+
+/* Improve contrast on hero background */
+.hero-actions {
+  box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+}
+
+/* Airbnb visibility fix */
+.hero-action.airbnb {
+  color: #fff !important;
+  background: linear-gradient(90deg, #FF385C, #E61E4D);
+}
+
