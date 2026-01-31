@@ -245,23 +245,32 @@ Message: ${message || '—'}
   <div class="enquiry-box">
 
     <h3>WhatsApp Enquiry</h3>
+    <p class="enquiry-sub">
+      Tell us your stay dates — we’ll respond on WhatsApp
+    </p>
 
-    <input type="date" id="enqCheckin" placeholder="Check-in date">
-    <input type="date" id="enqCheckout" placeholder="Check-out date">
+    <label>Check-in date</label>
+    <input type="date" id="enqCheckin">
 
+    <label>Check-out date</label>
+    <input type="date" id="enqCheckout">
+
+    <label>Message (optional)</label>
     <textarea 
       id="enqMessage" 
       rows="3"
-      placeholder="Short message (optional)">
-    </textarea>
+      placeholder="Eg. Visiting for work / couple stay / early check-in?"
+    ></textarea>
 
-    <button onclick="sendViaWhatsApp()">
+    <button class="send-whatsapp" onclick="sendViaWhatsApp()">
+      <i class="fab fa-whatsapp"></i>
       Send on WhatsApp
     </button>
 
     <button class="close-enquiry" onclick="closeEnquiry()">Close</button>
   </div>
 </div>
+
 
 
 </body>
