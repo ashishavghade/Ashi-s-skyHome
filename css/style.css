@@ -519,3 +519,64 @@ body {
   height: 34px;
   display: block;
 }
+
+/* =========================================
+   HERO ACTION BUTTONS — SAFE SCOPED ADDITION
+   Does NOT affect navbar, contact, footer
+========================================= */
+
+.hero-actions {
+  margin-top: 36px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  padding: 14px 18px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+}
+
+.hero-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 26px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none !important;
+  color: white !important;
+
+  box-shadow: 0 14px 32px rgba(0,0,0,0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero-action:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(0,0,0,0.35);
+}
+
+/* Individual button themes */
+.hero-action.whatsapp {
+  background: linear-gradient(90deg, #25D366, #1EBE5D);
+}
+
+.hero-action.enquiry {
+  background: linear-gradient(90deg, #C9B6E4, #E6C3E8);
+}
+
+.hero-action.airbnb {
+  background: linear-gradient(90deg, #FF5A5F, #FF385C);
+}
+
+/* Mobile safety */
+@media (max-width: 600px) {
+  .hero-actions {
+    gap: 12px;
+    padding: 16px;
+  }
+}
