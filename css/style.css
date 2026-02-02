@@ -411,3 +411,37 @@ body {
   .hero-text h1 { font-size: 42px; }
   .location-wrapper { grid-template-columns: 1fr; }
 }
+/* =====================
+   CONTACT SPACING FIX
+===================== */
+
+.contact-section {
+  padding: 80px 20px 90px; /* reduced from 120px */
+  position: relative;
+}
+
+/* Soft visual anchor */
+.contact-section::before {
+  content: "";
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, #F2B8C6, #C9B6E4);
+  display: block;
+  margin: 0 auto 36px;
+  border-radius: 2px;
+}
+
+.contact-section h2 {
+  margin-bottom: 28px;
+}
+
+/* Buttons tighter */
+.contact-actions {
+  margin-bottom: 32px; /* was 45px */
+}
+
+/* Social icons closer */
+.socials {
+  margin-top: 10px;
+}
+
