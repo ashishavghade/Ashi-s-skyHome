@@ -175,10 +175,42 @@ body {
   color: white;
 }
 /* HERO BUTTON — BASE */
+/* =====================
+   HERO ACTION BUTTONS – ICON STYLE
+===================== */
+
+.hero-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  padding: 14px 18px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(10px);
+}
+
+/* Base button */
 .hero-action {
-  background: rgba(255,255,255,0.9);
-  color: #4A4358;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 28px;
   border-radius: 40px;
+
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+
+  background: #EBDDF4;            /* same as social icon bg */
+  color: #9B86BD;                  /* lavender icon color */
+
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 
   transition:
     background 0.35s ease,
@@ -187,26 +219,29 @@ body {
     box-shadow 0.35s ease;
 }
 
-/* WhatsApp hover (like social icon) */
+/* Icon size harmony */
+.hero-action i {
+  font-size: 16px;
+}
+
+/* Lift on hover */
+.hero-action:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
+
+/* WhatsApp hover */
 .hero-action.whatsapp:hover {
   background: #25D366;
-  color: #ffffff;
-  box-shadow: 0 14px 30px rgba(37,211,102,0.45);
+  color: white;
 }
 
 /* Airbnb hover */
 .hero-action.airbnb:hover {
   background: #FF385C;
-  color: #ffffff;
-  box-shadow: 0 14px 30px rgba(255,56,92,0.45);
-}
-.hero-action i {
-  transition: transform 0.3s ease;
+  color: white;
 }
 
-.hero-action:hover i {
-  transform: scale(1.1);
-}
 
 /* =====================
    SECTIONS
