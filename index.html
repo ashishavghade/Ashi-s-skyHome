@@ -4,16 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Ashi’s SkyHome | Aesthetic 1BHK Stay in Gurgaon</title>
-<!-- FAVICON & APP ICONS -->
-<link rel="icon" href="images/favicon.ico">
-<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+  <title>Ashi’s SkyHome | Aesthetic 1BHK Stay in Noida</title>
 
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-<link rel="manifest" href="images/site.webmanifest">
-
+  <!-- FAVICONS -->
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -21,6 +16,10 @@
   <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!-- FLATPICKR -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <!-- MAIN CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -29,7 +28,7 @@
 <header class="navbar">
   <div class="nav-inner">
     <div class="logo">
-     <img src="images/logo.svg" alt="Ashi’s SkyHome logo" class="logo-icon">  Ashi’s SkyHome
+      <img src="images/logo.svg" class="logo-icon"> Ashi’s SkyHome
     </div>
     <nav>
       <a href="#home">Home</a>
@@ -48,40 +47,33 @@
   <div class="hero-overlay"></div>
 
   <div class="hero-text">
-    <h1>Ashi’s SkyHome</h1>
+    <div class="hero-text-bg">
+      <h1>Ashi’s SkyHome</h1>
 
-    <p class="hero-subtitle">
-      A calm, pastel retreat designed for slow mornings and peaceful stays
-    </p>
+      <p class="hero-sub">
+        A calm, pastel retreat designed for slow mornings and peaceful stays
+      </p>
 
-    <p class="hero-meta">
-      Entire 1BHK · Supertech North Eye, Noida · Safe & private
-    </p>
+      <p class="hero-meta">
+        Entire 1BHK · Supertech North Eye, Noida · Safe & private
+      </p>
 
-    <div class="hero-actions">
+      <div class="hero-actions">
+        <button class="hero-action whatsapp" onclick="openEnquiry()">
+          <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+        </button>
 
-      <!-- WhatsApp Enquiry -->
-      <button class="hero-action whatsapp" onclick="openEnquiry()">
-        <i class="fab fa-whatsapp"></i>
-        Enquire on WhatsApp
-      </button>
-
-      <!-- Airbnb -->
-      <a 
-        href="https://www.airbnb.com"
-        target="_blank"
-        class="hero-action airbnb">
-        <i class="fa-brands fa-airbnb"></i>
-        Book on Airbnb
-      </a>
-
+        <a href="https://www.airbnb.com" target="_blank" class="hero-action airbnb">
+          <i class="fa-brands fa-airbnb"></i> Book on Airbnb
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- STAY -->
 <section id="stay" class="section dreamy-bg reveal">
-  <h2 class="title-shadow">Your Stay</h2>
+  <h2>Your Stay</h2>
 
   <div class="stay-cards">
     <div class="stay-card">
@@ -92,32 +84,15 @@
 
     <div class="stay-card">
       <img src="images/hero1.jpg">
-      <h3>Everyone Is Welcome</h3>
-      <p>Perfect for couples, solo travelers, friends & families.</p>
-    </div>
-  </div>
-
-  <!-- AMENITIES -->
-  <div class="amenities reveal">
-    <p class="amenities-title">Thoughtful comforts included</p>
-
-    <div class="amenities-list">
-      <div class="amenity"><i class="fa-solid fa-wifi"></i><span>High-speed Wi-Fi</span></div>
-      <div class="amenity"><i class="fa-solid fa-snowflake"></i><span>Air-Conditioned</span></div>
-      <div class="amenity"><i class="fa-solid fa-temperature-high"></i><span>Heater</span></div>
-      <div class="amenity"><i class="fa-solid fa-shower"></i><span>Hot Water</span></div>
-      <div class="amenity"><i class="fa-solid fa-couch"></i><span>Fully Furnished</span></div>
-      <div class="amenity"><i class="fa-solid fa-kitchen-set"></i><span>Equipped Kitchen</span></div>
-      <div class="amenity"><i class="fa-solid fa-bed"></i><span>Clean Linen</span></div>
-      <div class="amenity"><i class="fa-solid fa-bolt"></i><span>Power Backup</span></div>
+      <h3>Perfect for Couples</h3>
+      <p>Romantic, cozy, and ideal for peaceful getaways.</p>
     </div>
   </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery" class="section reveal">
-  <h2 class="title-shadow">Gallery</h2>
-
+  <h2>Gallery</h2>
   <div class="gallery-grid">
     <img src="images/hero.jpg">
     <img src="images/room1.jpg">
@@ -129,44 +104,24 @@
 <!-- LOCATION -->
 <section id="location" class="section dreamy-bg reveal">
   <div class="location-wrapper">
-    <div class="location-text">
-      <h2 class="title-shadow">Location</h2>
-      <p>
-        Located in Noida with easy access to cafés, offices,
-        shopping hubs, and city hotspots.
-      </p>
-      
- <p class="location-address">
-  Ashi’s SkyHome, Supertech North Eye, Noida, Uttar Pradesh
-</p>
-
-      <p class="location-note">
-        Peaceful neighborhood • Easy cab access • Safe surroundings
-      </p>
+    <div>
+      <h2>Location</h2>
+      <p>Supertech North Eye, Noida</p>
+      <p class="location-note">Safe neighborhood · Easy cab access</p>
     </div>
 
- <div class="map-card">
-  <iframe
-    src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"
-    width="100%"
-    height="340"
-    style="border:0;"
-    allowfullscreen
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
-
-
-
+    <div class="map-card">
+      <iframe
+        src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"
+        loading="lazy">
+      </iframe>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section contact-section reveal">
-  <h2 class="title-shadow">Let’s Stay Connected</h2>
-  <p class="contact-sub">Reach out anytime</p>
+  <h2>Let’s Stay Connected</h2>
 
   <div class="contact-actions">
     <a href="tel:+919217787941" class="contact-btn call">
@@ -177,32 +132,43 @@
       <i class="fa-solid fa-envelope"></i> Mail
     </a>
   </div>
-
-  <div class="socials">
-    <a href="#" class="social ig"><i class="fab fa-instagram"></i></a>
-    <a href="#" class="social fb"><i class="fab fa-facebook-f"></i></a>
-    <a href="#" class="social yt"><i class="fab fa-youtube"></i></a>
-    <a href="#" class="social wa"><i class="fab fa-whatsapp"></i></a>
-  </div>
 </section>
 
 </main>
 
 <footer class="footer">
-  <div class="footer-links">
-    <a href="#">Privacy Policy</a>
-    <a href="#">Cancellation Policy</a>
-    <a href="#">Terms & Conditions</a>
-  </div>
   <p>© 2026 Ashi’s SkyHome. All rights reserved.</p>
 </footer>
 
-<script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => e.isIntersecting && e.target.classList.add('active'));
-  }, { threshold: 0.15 });
+<!-- ENQUIRY MODAL -->
+<div class="enquiry-modal" id="enquiryModal">
+  <div class="enquiry-box">
+    <h3>WhatsApp Enquiry</h3>
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    <label>Stay dates</label>
+    <input type="text" id="enqDates" placeholder="Select check-in & check-out">
+
+    <label>Message (optional)</label>
+    <textarea id="enqMessage" rows="3"
+      placeholder="Couple stay / work visit / early check-in?"></textarea>
+
+    <button class="send-whatsapp" onclick="sendViaWhatsApp()">
+      <i class="fab fa-whatsapp"></i> Send on WhatsApp
+    </button>
+
+    <button class="close-enquiry" onclick="closeEnquiry()">Close</button>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  flatpickr("#enqDates", {
+    mode: "range",
+    minDate: "today",
+    dateFormat: "d M Y"
+  });
 
   function openEnquiry() {
     document.getElementById('enquiryModal').style.display = 'flex';
@@ -213,63 +179,25 @@
   }
 
   function sendViaWhatsApp() {
-    const checkin = document.getElementById('enqCheckin').value;
-    const checkout = document.getElementById('enqCheckout').value;
+    const dates = document.getElementById('enqDates').value;
     const message = document.getElementById('enqMessage').value;
 
-    if (!checkin || !checkout) {
-      alert('Please select check-in and check-out dates');
+    if (!dates) {
+      alert('Please select your stay dates');
       return;
     }
 
     const text = encodeURIComponent(
 `Hi, I'm interested in Ashi’s SkyHome.
 
-Check-in: ${checkin}
-Check-out: ${checkout}
-Message: ${message || '—'}
-`
+Stay dates: ${dates}
+Message: ${message || '—'}`
     );
 
     window.open(`https://wa.me/919217787941?text=${text}`, '_blank');
     closeEnquiry();
   }
 </script>
-
-
-
-<!-- ENQUIRY MODAL -->
-<div class="enquiry-modal" id="enquiryModal">
-  <div class="enquiry-box">
-
-    <h3>WhatsApp Enquiry</h3>
-    <p class="enquiry-sub">
-      Tell us your stay dates — we’ll respond on WhatsApp
-    </p>
-
-    <label>Check-in date</label>
-    <input type="date" id="enqCheckin">
-
-    <label>Check-out date</label>
-    <input type="date" id="enqCheckout">
-
-    <label>Message (optional)</label>
-    <textarea 
-      id="enqMessage" 
-      rows="3"
-      placeholder="Eg. Visiting for work / couple stay / early check-in?"
-    ></textarea>
-
-    <button class="send-whatsapp" onclick="sendViaWhatsApp()">
-      <i class="fab fa-whatsapp"></i>
-      Send on WhatsApp
-    </button>
-
-    <button class="close-enquiry" onclick="closeEnquiry()">Close</button>
-  </div>
-</div>
-
-
 
 </body>
 </html>
