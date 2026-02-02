@@ -46,7 +46,7 @@
 <section id="home" class="hero">
   <div class="hero-overlay"></div>
 
-  <div class="hero-text">
+  <div class="hero-text reveal">
     <div class="hero-text-bg">
       <h1>Ashi’s SkyHome</h1>
 
@@ -86,6 +86,22 @@
       <img src="images/hero1.jpg">
       <h3>Perfect for Couples</h3>
       <p>Romantic, cozy, and ideal for peaceful getaways.</p>
+    </div>
+  </div>
+
+  <!-- AMENITIES (RESTORED) -->
+  <div class="amenities reveal">
+    <p class="amenities-title">Thoughtful comforts included</p>
+
+    <div class="amenities-list">
+      <div class="amenity"><i class="fa-solid fa-wifi"></i><span>High-speed Wi-Fi</span></div>
+      <div class="amenity"><i class="fa-solid fa-snowflake"></i><span>Air-Conditioned</span></div>
+      <div class="amenity"><i class="fa-solid fa-temperature-high"></i><span>Heater</span></div>
+      <div class="amenity"><i class="fa-solid fa-shower"></i><span>Hot Water</span></div>
+      <div class="amenity"><i class="fa-solid fa-couch"></i><span>Fully Furnished</span></div>
+      <div class="amenity"><i class="fa-solid fa-kitchen-set"></i><span>Equipped Kitchen</span></div>
+      <div class="amenity"><i class="fa-solid fa-bed"></i><span>Clean Linen</span></div>
+      <div class="amenity"><i class="fa-solid fa-bolt"></i><span>Power Backup</span></div>
     </div>
   </div>
 </section>
@@ -132,11 +148,26 @@
       <i class="fa-solid fa-envelope"></i> Mail
     </a>
   </div>
+
+  <!-- SOCIALS (RESTORED) -->
+  <div class="socials">
+    <a href="#" class="social ig"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="social fb"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="social yt"><i class="fab fa-youtube"></i></a>
+    <a href="#" class="social wa"><i class="fab fa-whatsapp"></i></a>
+  </div>
 </section>
 
 </main>
 
 <footer class="footer">
+  <!-- FOOTER LINKS (RESTORED) -->
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Cancellation Policy</a>
+    <a href="#">Terms & Conditions</a>
+  </div>
+
   <p>© 2026 Ashi’s SkyHome. All rights reserved.</p>
 </footer>
 
@@ -164,6 +195,12 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => e.isIntersecting && e.target.classList.add('active'));
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
   flatpickr("#enqDates", {
     mode: "range",
     minDate: "today",
