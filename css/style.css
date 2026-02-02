@@ -394,6 +394,14 @@ body {
   border-radius: 26px;
   box-shadow: 0 35px 70px rgba(0,0,0,0.12);
 }
+#location h2 {
+  margin-bottom: 18px;
+}
+
+#location p {
+  margin-top: 6px;
+}
+
 
 /* =====================
    CONTACT (RESTORED)
