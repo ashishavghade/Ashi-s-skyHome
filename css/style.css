@@ -332,6 +332,63 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 18px 40px rgba(201,182,228,0.45);
 }
+/* =====================
+   LOCATION TEXT POLISH
+===================== */
+
+.location-text {
+  max-width: 420px;
+  text-align: left;            /* key change */
+  padding-left: 10px;
+}
+
+.location-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: #2F2A36;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+/* Soft underline accent */
+.location-text h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #F2B8C6, #C9B6E4);
+  border-radius: 2px;
+}
+
+/* Primary location line */
+.location-text p:first-of-type {
+  font-size: 16px;
+  color: #4A4358;
+  margin-bottom: 8px;
+}
+
+/* Secondary note */
+.location-note {
+  font-size: 14px;
+  color: #6A5C7A;
+  letter-spacing: 0.2px;
+}
+.location-text {
+  animation: fadeUpSoft 1.4s ease forwards;
+}
+
+@keyframes fadeUpSoft {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Socials */
 .socials {
