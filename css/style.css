@@ -609,4 +609,95 @@ body {
 .socials {
   margin-top: 10px;
 }
+/* ===============================
+           HOUSE RULES 
+================================ */
+.rules-intro {
+  max-width: 620px;
+  margin: 14px auto 36px;
+  font-size: 15px;
+  color: #6A5C7A;
+}
+
+.rules-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.75);
+  padding: 16px 18px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+}
+
+.rule i {
+  font-size: 18px;
+  color: #B6A3DC; /* same lavender tone */
+}
+
+.rule span {
+  font-size: 14px;
+  color: #4A4358;
+}
+
+.rules-note {
+  margin-top: 36px;
+  font-size: 14px;
+  color: #6A5C7A;
+}
+/* ===============================
+   HOUSE RULES – ANIMATION & UX
+   Calm, romantic, staggered reveal
+================================ */
+
+/* Base rule card */
+.rules-list .rule {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Reveal when section is visible */
+#rules.reveal.active .rule {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered appearance */
+#rules.reveal.active .rule:nth-child(1) { transition-delay: 0.05s; }
+#rules.reveal.active .rule:nth-child(2) { transition-delay: 0.1s; }
+#rules.reveal.active .rule:nth-child(3) { transition-delay: 0.15s; }
+#rules.reveal.active .rule:nth-child(4) { transition-delay: 0.2s; }
+#rules.reveal.active .rule:nth-child(5) { transition-delay: 0.25s; }
+#rules.reveal.active .rule:nth-child(6) { transition-delay: 0.3s; }
+#rules.reveal.active .rule:nth-child(7) { transition-delay: 0.35s; }
+#rules.reveal.active .rule:nth-child(8) { transition-delay: 0.4s; }
+
+/* Soft hover lift (premium feel) */
+.rules-list .rule:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.08);
+}
+
+/* Icon micro-interaction */
+.rules-list .rule i {
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.rules-list .rule:hover i {
+  transform: scale(1.1);
+  color: #9C86C9;
+}
 
