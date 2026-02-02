@@ -72,10 +72,13 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(30, 22, 38, 0.45),
-    rgba(201, 182, 228, 0.35)
-  );
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.35) 0%,
+      rgba(201,182,228,0.35) 40%,
+      rgba(30,22,38,0.55) 100%
+    );
 }
 
 .hero-text {
@@ -107,6 +110,23 @@ body {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* HERO TEXT CONTRAST BOOST (SAFE) */
+.hero-text h1 {
+  color: #1F1B26; /* deeper charcoal */
+  text-shadow:
+    0 2px 10px rgba(255,255,255,0.35),
+    0 8px 30px rgba(0,0,0,0.45);
+}
+
+.hero-text p,
+.hero-sub,
+.hero-meta {
+  color: #2F2A36;
+  text-shadow:
+    0 1px 6px rgba(255,255,255,0.4),
+    0 4px 18px rgba(0,0,0,0.35);
+}
+
 
 /* =====================
    HERO ACTIONS
@@ -153,6 +173,39 @@ body {
 .hero-action.airbnb:hover {
   background: #FF385C;
   color: white;
+}
+/* HERO BUTTON — BASE */
+.hero-action {
+  background: rgba(255,255,255,0.9);
+  color: #4A4358;
+  border-radius: 40px;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* WhatsApp hover (like social icon) */
+.hero-action.whatsapp:hover {
+  background: #25D366;
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(37,211,102,0.45);
+}
+
+/* Airbnb hover */
+.hero-action.airbnb:hover {
+  background: #FF385C;
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(255,56,92,0.45);
+}
+.hero-action i {
+  transition: transform 0.3s ease;
+}
+
+.hero-action:hover i {
+  transform: scale(1.1);
 }
 
 /* =====================
