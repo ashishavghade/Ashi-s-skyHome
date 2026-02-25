@@ -67,27 +67,26 @@
 </section>
 
 <!-- STAY -->
+<!-- STAY -->
 <section id="stay" class="section dreamy-bg reveal">
   <h2>Your Stay</h2>
 
-  <div class="stay-items">
+  <div class="stays">
 
-    <!-- PROPERTY 1 -->
-    <div class="stay-item">
+    <!-- ================= STAY 1 ================= -->
+    <div class="stay-block" onclick="toggleStay(this)">
 
-      <div class="stay-card" onclick="toggleStay('s1')">
-        <img src="images/hero.jpg">
-        <h3>Entire 1BHK Flat</h3>
-        <p>Private, airy, and thoughtfully styled for calm living.</p>
-      </div>
+      <!-- COLLAPSED ROW -->
+      <div class="stay-row">
+        <img src="images/hero.jpg" class="stay-cover">
 
-      <div class="stay-expanded" id="s1">
+        <div class="stay-info">
+          <h3>Entire 1BHK Flat</h3>
+          <p>Private, airy, and thoughtfully styled for calm living.</p>
 
-        <!-- DETAILS + MAP -->
-        <div class="stay-top">
-          <div class="stay-details">
-            <h3>Entire 1BHK Flat</h3>
-            <p>Supertech North Eye · Noida</p>
+          <div class="stay-meta">
+            <span class="stay-location">Supertech North Eye · Noida</span>
+
             <div class="stay-rating">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -96,43 +95,42 @@
               <i class="fa-regular fa-star"></i>
             </div>
           </div>
-
-          <div class="stay-map">
-            <iframe src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"></iframe>
-          </div>
         </div>
+      </div>
 
-        <!-- GALLERY -->
+      <!-- EXPANDED -->
+      <div class="stay-expanded">
+
         <div class="stay-gallery">
           <img src="images/5thfloor/room1.jpg">
           <img src="images/5thfloor/room2.jpg">
           <img src="images/5thfloor/room3.jpg">
           <img src="images/5thfloor/room1.jpg">
-          <img src="images/5thfloor/room2.jpg">
-          <img src="images/5thfloor/room3.jpg">
-          <img src="images/5thfloor/room1.jpg">
-          <img src="images/5thfloor/room2.jpg">
+        </div>
+
+        <div class="stay-map">
+          <iframe
+            src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"
+            loading="lazy">
+          </iframe>
         </div>
 
       </div>
     </div>
 
+    <!-- ================= STAY 2 ================= -->
+    <div class="stay-block" onclick="toggleStay(this)">
 
-    <!-- PROPERTY 2 -->
-    <div class="stay-item">
+      <div class="stay-row">
+        <img src="images/hero1.jpg" class="stay-cover">
 
-      <div class="stay-card" onclick="toggleStay('s2')">
-        <img src="images/hero1.jpg">
-        <h3>Perfect for Couples</h3>
-        <p>Romantic, cozy, and ideal for peaceful getaways.</p>
-      </div>
+        <div class="stay-info">
+          <h3>Perfect for Couples</h3>
+          <p>Romantic, cozy, and ideal for peaceful getaways.</p>
 
-      <div class="stay-expanded" id="s2">
+          <div class="stay-meta">
+            <span class="stay-location">Supertech North Eye · Noida</span>
 
-        <div class="stay-top">
-          <div class="stay-details">
-            <h3>Perfect for Couples</h3>
-            <p>Supertech North Eye · Noida</p>
             <div class="stay-rating">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -141,21 +139,23 @@
               <i class="fa-regular fa-star"></i>
             </div>
           </div>
-
-          <div class="stay-map">
-            <iframe src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"></iframe>
-          </div>
         </div>
+      </div>
+
+      <div class="stay-expanded">
 
         <div class="stay-gallery">
           <img src="images/5thfloor/room1.jpg">
           <img src="images/5thfloor/room2.jpg">
           <img src="images/5thfloor/room3.jpg">
           <img src="images/5thfloor/room1.jpg">
-          <img src="images/5thfloor/room2.jpg">
-          <img src="images/5thfloor/room3.jpg">
-          <img src="images/5thfloor/room1.jpg">
-          <img src="images/5thfloor/room2.jpg">
+        </div>
+
+        <div class="stay-map">
+          <iframe
+            src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"
+            loading="lazy">
+          </iframe>
         </div>
 
       </div>
@@ -319,19 +319,12 @@ function toggleGallery(id) {
 function openEnquiry() {
   document.getElementById('enquiryModal').style.display = 'flex';
 }
-function toggleStay(id) {
-  const all = document.querySelectorAll(".stay-expanded");
-
-  all.forEach(el => {
-    if (el.id !== id) el.classList.remove("active");
+function toggleStay(el) {
+  document.querySelectorAll(".stay-block").forEach(b => {
+    if (b !== el) b.classList.remove("active");
   });
 
-  const target = document.getElementById(id);
-  target.classList.toggle("active");
-
-  if (target.classList.contains("active")) {
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  el.classList.toggle("active");
 }
 function closeEnquiry() {
   document.getElementById('enquiryModal').style.display = 'none';
