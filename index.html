@@ -70,79 +70,102 @@
 <section id="stay" class="section dreamy-bg reveal">
   <h2>Your Stay</h2>
 
-  <div class="stay-cards">
+  <div class="stay-items">
 
-    <!-- STAY 1 -->
-    <div class="stay-card" onclick="toggleGallery('g1')">
-      <img src="images/hero.jpg">
-      <h3>Entire 1BHK Flat</h3>
-      <p>Private, airy, and thoughtfully styled for calm living.</p>
-    </div>
-     <div class="stay-gallery" id="g1">
-        <img src="images/5thfloor/room1.jpg">
-        <img src="images/5thfloor/room2.jpg">
-        <img src="images/5thfloor/room3.jpg">
+    <!-- PROPERTY 1 -->
+    <div class="stay-item">
+
+      <div class="stay-card" onclick="toggleStay('s1')">
+        <img src="images/hero.jpg">
+        <h3>Entire 1BHK Flat</h3>
+        <p>Private, airy, and thoughtfully styled for calm living.</p>
       </div>
-    <!-- LOCATION -->
-<section id="location" class="section dreamy-bg reveal">
-  <div class="location-wrapper">
-    <div>
-      <h2>Location</h2>
-      <p>
-        Set in the calm surroundings of <strong>Supertech North Eye, Noida</strong>,
-        Ashi’s SkyHome is a quiet escape above the everyday rush.
-      </p>
-      <p class="location-note">
-        Peaceful neighborhood · Smooth cab access · Unhurried stays
-      </p>
+
+      <div class="stay-expanded" id="s1">
+
+        <!-- DETAILS + MAP -->
+        <div class="stay-top">
+          <div class="stay-details">
+            <h3>Entire 1BHK Flat</h3>
+            <p>Supertech North Eye · Noida</p>
+            <div class="stay-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+          </div>
+
+          <div class="stay-map">
+            <iframe src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"></iframe>
+          </div>
+        </div>
+
+        <!-- GALLERY -->
+        <div class="stay-gallery">
+          <img src="images/5thfloor/room1.jpg">
+          <img src="images/5thfloor/room2.jpg">
+          <img src="images/5thfloor/room3.jpg">
+          <img src="images/5thfloor/room1.jpg">
+          <img src="images/5thfloor/room2.jpg">
+          <img src="images/5thfloor/room3.jpg">
+          <img src="images/5thfloor/room1.jpg">
+          <img src="images/5thfloor/room2.jpg">
+        </div>
+
+      </div>
     </div>
 
-    <div class="map-card">
-      <iframe
-        src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"
-        loading="lazy">
-      </iframe>
+
+    <!-- PROPERTY 2 -->
+    <div class="stay-item">
+
+      <div class="stay-card" onclick="toggleStay('s2')">
+        <img src="images/hero1.jpg">
+        <h3>Perfect for Couples</h3>
+        <p>Romantic, cozy, and ideal for peaceful getaways.</p>
+      </div>
+
+      <div class="stay-expanded" id="s2">
+
+        <div class="stay-top">
+          <div class="stay-details">
+            <h3>Perfect for Couples</h3>
+            <p>Supertech North Eye · Noida</p>
+            <div class="stay-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+          </div>
+
+          <div class="stay-map">
+            <iframe src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"></iframe>
+          </div>
+        </div>
+
+        <div class="stay-gallery">
+          <img src="images/5thfloor/room1.jpg">
+          <img src="images/5thfloor/room2.jpg">
+          <img src="images/5thfloor/room3.jpg">
+          <img src="images/5thfloor/room1.jpg">
+          <img src="images/5thfloor/room2.jpg">
+          <img src="images/5thfloor/room3.jpg">
+          <img src="images/5thfloor/room1.jpg">
+          <img src="images/5thfloor/room2.jpg">
+        </div>
+
+      </div>
     </div>
+
   </div>
 </section>
-
-    <!-- STAY 2 -->
-    <div class="stay-card" onclick="toggleGallery('g2')">
-      <img src="images/hero1.jpg">
-      <h3>Perfect for Couples</h3>
-      <p>Romantic, cozy, and ideal for peaceful getaways.</p>
-    </div>
-    
- <div class="stay-gallery" id="g2">
-        <img src="images/5thfloor/room1.jpg">
-        <img src="images/5thfloor/room2.jpg">
-        <img src="images/5thfloor/room3.jpg">
-      </div>
-    <!-- LOCATION -->
-<section id="location" class="section dreamy-bg reveal">
-  <div class="location-wrapper">
-    <div>
-      <h2>Location</h2>
-      <p>
-        Set in the calm surroundings of <strong>Supertech North Eye, Noida</strong>,
-        Ashi’s SkyHome is a quiet escape above the everyday rush.
-      </p>
-      <p class="location-note">
-        Peaceful neighborhood · Smooth cab access · Unhurried stays
-      </p>
-    </div>
-
-    <div class="map-card">
-      <iframe
-        src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"
-        loading="lazy">
-      </iframe>
-    </div>
-  </div>
-</section>
-  </div>
 
   <!-- AMENITIES -->
+  <section>
   <div class="amenities reveal">
     <p class="amenities-title">Thoughtful comforts included</p>
 
@@ -296,7 +319,20 @@ function toggleGallery(id) {
 function openEnquiry() {
   document.getElementById('enquiryModal').style.display = 'flex';
 }
+function toggleStay(id) {
+  const all = document.querySelectorAll(".stay-expanded");
 
+  all.forEach(el => {
+    if (el.id !== id) el.classList.remove("active");
+  });
+
+  const target = document.getElementById(id);
+  target.classList.toggle("active");
+
+  if (target.classList.contains("active")) {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
 function closeEnquiry() {
   document.getElementById('enquiryModal').style.display = 'none';
 }
