@@ -6,20 +6,15 @@
 
   <title>Ashi’s SkyHome | Aesthetic 1BHK Stay in Noida</title>
 
-  <!-- FAVICONS -->
   <link rel="icon" href="images/favicon.ico">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- FLATPICKR -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-  <!-- MAIN CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -76,30 +71,36 @@
   <h2>Your Stay</h2>
 
   <div class="stay-cards">
+
+    <!-- STAY 1 -->
     <div class="stay-card" onclick="toggleGallery('g1')">
       <img src="images/hero.jpg">
       <h3>Entire 1BHK Flat</h3>
       <p>Private, airy, and thoughtfully styled for calm living.</p>
+
       <div class="stay-gallery" id="g1">
-    <img src="images/5thfloor/room1.jpg">
-    <img src="images/5thfloor/room2.jpg">
-    <img src="images/5thfloor/room3.jpg">
-  </div>
+        <img src="images/5thfloor/room1.jpg">
+        <img src="images/5thfloor/room2.jpg">
+        <img src="images/5thfloor/room3.jpg">
+      </div>
     </div>
 
-    <div class="stay-card" onclick="toggleGallery('g1')">
+    <!-- STAY 2 -->
+    <div class="stay-card" onclick="toggleGallery('g2')">
       <img src="images/hero1.jpg">
       <h3>Perfect for Couples</h3>
       <p>Romantic, cozy, and ideal for peaceful getaways.</p>
-      <div class="stay-gallery" id="g1">
-    <img src="images/5thfloor/room1.jpg">
-    <img src="images/5thfloor/room2.jpg">
-    <img src="images/5thfloor/room3.jpg">
-  </div>
+
+      <div class="stay-gallery" id="g2">
+        <img src="images/5thfloor/room1.jpg">
+        <img src="images/5thfloor/room2.jpg">
+        <img src="images/5thfloor/room3.jpg">
+      </div>
     </div>
+
   </div>
 
-  <!-- AMENITIES (RESTORED) -->
+  <!-- AMENITIES -->
   <div class="amenities reveal">
     <p class="amenities-title">Thoughtful comforts included</p>
 
@@ -126,10 +127,10 @@
     <img src="images/room1.jpg">
   </div>
 </section>
+
+<!-- RULES -->
 <section id="rules" class="section dreamy-bg reveal">
-  
-  <!-- House Rules -->
-<h2>House Rules</h2>
+  <h2>House Rules</h2>
 
   <p class="rules-intro">
     To keep Ashi’s SkyHome peaceful and comfortable for every guest,
@@ -156,15 +157,14 @@
 <section id="location" class="section dreamy-bg reveal">
   <div class="location-wrapper">
     <div>
-     <h2>Location</h2>
-<p>
-  Set in the calm surroundings of <strong>Supertech North Eye, Noida</strong>,  
-  Ashi’s SkyHome is a quiet escape above the everyday rush.
-</p>
-<p class="location-note">
-  Peaceful neighborhood · Smooth cab access · Unhurried stays
-</p>
-
+      <h2>Location</h2>
+      <p>
+        Set in the calm surroundings of <strong>Supertech North Eye, Noida</strong>,
+        Ashi’s SkyHome is a quiet escape above the everyday rush.
+      </p>
+      <p class="location-note">
+        Peaceful neighborhood · Smooth cab access · Unhurried stays
+      </p>
     </div>
 
     <div class="map-card">
@@ -190,7 +190,6 @@
     </a>
   </div>
 
-  <!-- SOCIALS (RESTORED) -->
   <div class="socials">
     <a href="#" class="social ig"><i class="fab fa-instagram"></i></a>
     <a href="#" class="social fb"><i class="fab fa-facebook-f"></i></a>
@@ -202,17 +201,14 @@
 </main>
 
 <footer class="footer">
-  <!-- FOOTER LINKS (RESTORED) -->
   <div class="footer-links">
     <a href="#">Privacy Policy</a>
     <a href="#">Cancellation Policy</a>
     <a href="#">Terms & Conditions</a>
   </div>
-
   <p>© 2026 Ashi’s SkyHome. All rights reserved.</p>
 </footer>
 
-<!-- ENQUIRY MODAL -->
 <div class="enquiry-modal" id="enquiryModal">
   <div class="enquiry-box">
     <h3>WhatsApp Enquiry</h3>
@@ -232,55 +228,56 @@
   </div>
 </div>
 
-<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => e.isIntersecting && e.target.classList.add('active'));
-  }, { threshold: 0.15 });
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => e.isIntersecting && e.target.classList.add('active'));
+}, { threshold: 0.15 });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  flatpickr("#enqDates", {
-    mode: "range",
-    minDate: "today",
-    dateFormat: "d M Y"
-  });
+flatpickr("#enqDates", {
+  mode: "range",
+  minDate: "today",
+  dateFormat: "d M Y"
+});
+
 function toggleGallery(id) {
+  const target = document.getElementById(id);
   document.querySelectorAll('.stay-gallery').forEach(g => {
-    if (g.id !== id) g.classList.remove("active");
+    if (g !== target) g.classList.remove("active");
   });
-
-  document.getElementById(id).classList.toggle("active");
+  target.classList.toggle("active");
 }
-  function openEnquiry() {
-    document.getElementById('enquiryModal').style.display = 'flex';
+
+function openEnquiry() {
+  document.getElementById('enquiryModal').style.display = 'flex';
+}
+
+function closeEnquiry() {
+  document.getElementById('enquiryModal').style.display = 'none';
+}
+
+function sendViaWhatsApp() {
+  const dates = document.getElementById('enqDates').value;
+  const message = document.getElementById('enqMessage').value;
+
+  if (!dates) {
+    alert('Please select your stay dates');
+    return;
   }
 
-  function closeEnquiry() {
-    document.getElementById('enquiryModal').style.display = 'none';
-  }
-
-  function sendViaWhatsApp() {
-    const dates = document.getElementById('enqDates').value;
-    const message = document.getElementById('enqMessage').value;
-
-    if (!dates) {
-      alert('Please select your stay dates');
-      return;
-    }
-
-    const text = encodeURIComponent(
+  const text = encodeURIComponent(
 `Hi, I'm interested in Ashi’s SkyHome.
 
 Stay dates: ${dates}
 Message: ${message || '—'}`
-    );
+  );
 
-    window.open(`https://wa.me/919217787941?text=${text}`, '_blank');
-    closeEnquiry();
-  }
+  window.open(`https://wa.me/919217787941?text=${text}`, '_blank');
+  closeEnquiry();
+}
 </script>
 
 </body>
