@@ -181,25 +181,163 @@ body.sage-theme {
   text-shadow: 3px 6px 18px rgba(201,182,228,0.45);
 }
 
-/* ===================== STAY ===================== */
-.stay-cards {
-  margin-top: 60px;
+/* =================================
+   STAY SECTION — NEW ARCHITECTURE
+================================= */
+
+/* container */
+.stay-items {
+  max-width: 1200px;
+  margin: 60px auto 0;
   display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 30px;
 }
 
+/* each property wrapper */
+.stay-item {
+  width: 100%;
+}
+
+/* stay card */
 .stay-card {
-  width: 300px;
+  width: 320px;
+  margin: auto;
   background: white;
   border-radius: 26px;
   overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.08);
-  transition: transform 0.5s ease;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform .4s ease, box-shadow .4s ease;
 }
 
-.stay-card:hover { transform: translateY(-12px); }
+.stay-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.stay-card h3 {
+  margin: 14px 16px 4px;
+}
+
+.stay-card p {
+  margin: 0 16px 16px;
+  font-size: 14px;
+  color: #6A5C7A;
+}
+
+.stay-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+}
+
+
+/* =================================
+   EXPANDED PANEL
+================================= */
+
+.stay-expanded {
+  margin-top: 26px;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all .55s ease;
+}
+
+.stay-expanded.active {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+
+/* =================================
+   DETAILS + MAP ROW
+================================= */
+
+.stay-top {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.stay-details {
+  text-align: left;
+}
+
+.stay-details h3 {
+  margin-bottom: 8px;
+}
+
+.stay-details p {
+  color: #6A5C7A;
+  margin-bottom: 12px;
+}
+
+/* rating icons */
+.stay-rating i {
+  color: #F6C445;
+  margin-right: 3px;
+}
+
+/* map */
+.stay-map iframe {
+  width: 100%;
+  height: 260px;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+}
+
+
+/* =================================
+   GALLERY — 4 PER ROW + HOVER EXPAND
+================================= */
+
+.stay-gallery {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.stay-gallery img {
+  flex: 1;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: flex .45s ease, transform .45s ease;
+  cursor: pointer;
+}
+
+/* expand hovered image */
+.stay-gallery img:hover {
+  flex: 4;
+  transform: scale(1.02);
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 900px) {
+
+  .stay-top {
+    grid-template-columns: 1fr;
+  }
+
+  .stay-gallery {
+    flex-direction: column;
+  }
+
+  .stay-gallery img:hover {
+    flex: unset;
+    transform: scale(1.02);
+  }
+
+}
 
 /* ===================== AMENITIES ===================== */
 .amenities { margin-top: 70px; }
