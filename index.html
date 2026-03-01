@@ -328,6 +328,17 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(e => e.isIntersecting && e.target.classList.add('active'));
 }, { threshold: 0.15 });
 
+  document.querySelectorAll('.stay-gallery img').forEach(img => {
+  img.addEventListener('mouseenter', function () {
+    this.classList.add('zoomed');
+    document.body.classList.add('image-overlay');
+  });
+
+  img.addEventListener('mouseleave', function () {
+    this.classList.remove('zoomed');
+    document.body.classList.remove('image-overlay');
+  });
+});
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 flatpickr("#enqDates", {
@@ -356,6 +367,7 @@ function toggleStay(block, btn) {
     btn.textContent = "Show Details";
   }
 }
+  
 function closeEnquiry() {
   document.getElementById('enquiryModal').style.display = 'none';
 }
