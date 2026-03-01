@@ -65,7 +65,6 @@
 </section>
 
 <!-- STAY -->
-<!-- STAY -->
 <section id="stay" class="section dreamy-bg reveal">
   <h2>Your Stay</h2>
 
@@ -74,7 +73,7 @@
     <!-- ================= STAY 1 ================= -->
     <div class="stay-block">
 
-      <!-- COLLAPSED ROW -->
+      <!-- SUMMARY ROW -->
       <div class="stay-row">
         <img src="images/hero.jpg" class="stay-cover">
 
@@ -92,19 +91,11 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-regular fa-star"></i>
             </div>
-            <button class="expand-btn" onclick="toggleStay(this.closest('.stay-block'))">
-  View Details
-</button>
-            <div class="stay-buttons">
-  <a href="https://www.airbnb.co.in/rooms/1626620880758526755?check_in=2026-04-20&check_out=2026-04-21&search_mode=regular_search&source_impression_id=p3_1772349745_P3xE4dJWtLJIlBBN&previous_page_section_name=1000&federated_search_id=234cfdaa-b203-4d72-8316-6a0381f049f2" target="_blank" class="airbnb-btn">
-    <i class="fa-brands fa-airbnb"></i> View on Airbnb
-  </a>
-</div>
           </div>
         </div>
       </div>
 
-      <!-- EXPANDED -->
+      <!-- EXPANDED CONTENT -->
       <div class="stay-expanded">
 
         <div class="stay-gallery">
@@ -121,11 +112,24 @@
           </iframe>
         </div>
 
+        <div class="stay-actions">
+          <button class="expand-btn" onclick="toggleStay(this.closest('.stay-block'), this)">
+            Show Details
+          </button>
+
+          <a href="https://www.airbnb.co.in/rooms/1626620880758526755"
+             target="_blank"
+             class="airbnb-btn">
+            <i class="fa-brands fa-airbnb"></i> View on Airbnb
+          </a>
+        </div>
+
       </div>
     </div>
 
+
     <!-- ================= STAY 2 ================= -->
-    <div class="stay-block" onclick="toggleStay(this)">
+    <div class="stay-block">
 
       <div class="stay-row">
         <img src="images/hero1.jpg" class="stay-cover">
@@ -162,6 +166,18 @@
             src="https://www.google.com/maps?q=Supertech%20North%20Eye%20Noida&output=embed"
             loading="lazy">
           </iframe>
+        </div>
+
+        <div class="stay-actions">
+          <button class="expand-btn" onclick="toggleStay(this.closest('.stay-block'), this)">
+            Show Details
+          </button>
+
+          <a href="YOUR_SECOND_AIRBNB_LINK"
+             target="_blank"
+             class="airbnb-btn">
+            <i class="fa-brands fa-airbnb"></i> View on Airbnb
+          </a>
         </div>
 
       </div>
@@ -325,12 +341,14 @@ function toggleGallery(id) {
 function openEnquiry() {
   document.getElementById('enquiryModal').style.display = 'flex';
 }
-function toggleStay(el) {
-  document.querySelectorAll(".stay-block").forEach(b => {
-    if (b !== el) b.classList.remove("active");
-  });
+function toggleStay(block, btn) {
+  block.classList.toggle("active");
 
-  el.classList.toggle("active");
+  if (block.classList.contains("active")) {
+    btn.textContent = "Hide Details";
+  } else {
+    btn.textContent = "Show Details";
+  }
 }
 function closeEnquiry() {
   document.getElementById('enquiryModal').style.display = 'none';
