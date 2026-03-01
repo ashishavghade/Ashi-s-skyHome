@@ -857,3 +857,38 @@ body.sage-theme {
   background: #e03150;
   transform: translateY(-2px);
 }
+.stay-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.expand-btn {
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: 1px solid #C8B6E2;
+  background: white;
+  color: #5A4A75;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.expand-btn:hover {
+  background: #F3ECF9;
+}
+
+.airbnb-btn {
+  padding: 10px 18px;
+  border-radius: 14px;
+  background: #FF385C;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.airbnb-btn:hover {
+  background: #e03150;
+  transform: translateY(-2px);
+}
