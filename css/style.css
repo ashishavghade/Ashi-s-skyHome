@@ -737,23 +737,20 @@ body.sage-theme {
 
 /* ===================== EXPANDED FIXED LAYOUT ===================== */
 
-.stay-expanded {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: 0.5s ease;
-}
-
 .stay-block.active .stay-expanded {
   max-height: 1200px;
   opacity: 1;
   margin-top: 28px;
 
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-areas:
+    "gallery map"
+    "actions actions";
   gap: 32px;
   align-items: start;
 }
+
 /* ===================== CLEAN GALLERY ===================== */
 
 .stay-gallery {
@@ -772,6 +769,17 @@ body.sage-theme {
 
 .stay-gallery img:hover {
   transform: scale(1.08);
+}
+.stay-gallery {
+  grid-area: gallery;
+}
+
+.stay-map {
+  grid-area: map;
+}
+
+.stay-actions {
+  grid-area: actions;
 }
 
 /* ===================== MAP RIGHT SIDE ===================== */
@@ -802,6 +810,46 @@ body.sage-theme {
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.airbnb-btn:hover {
+  background: #e03150;
+  transform: translateY(-2px);
+}
+/* ================= BUTTON ROW ================= */
+
+.stay-actions {
+  grid-column: 1 / -1;   /* span full width under gallery + map */
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+/* Show Details button */
+.expand-btn {
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: 1px solid #C8B6E2;
+  background: white;
+  color: #5A4A75;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.expand-btn:hover {
+  background: #F3ECF9;
+}
+
+/* Airbnb button */
+.airbnb-btn {
+  padding: 12px 22px;
+  border-radius: 14px;
+  background: #FF385C;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
   transition: 0.3s ease;
 }
 
