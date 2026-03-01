@@ -292,31 +292,47 @@ body.sage-theme {
 }
 
 
+
+
 /* =================================
-   GALLERY — 4 PER ROW + HOVER EXPAND
+   GALLERY — PREMIUM HOVER EXPAND
 ================================= */
 
 .stay-gallery {
   display: flex;
-  gap: 16px;
-  overflow: hidden;
+  gap: 18px;
+  align-items: stretch;
 }
 
 .stay-gallery img {
   flex: 1;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
-  border-radius: 20px;
-  transition: flex .45s ease, transform .45s ease;
+  border-radius: 22px;
   cursor: pointer;
+
+  transition: 
+    flex 0.45s cubic-bezier(.4,0,.2,1),
+    transform 0.45s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.45s ease,
+    filter 0.35s ease;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* expand hovered image */
+/* Dim non-hovered images */
+.stay-gallery:hover img {
+  filter: brightness(0.85);
+}
+
+/* Expand hovered image */
 .stay-gallery img:hover {
-  flex: 4;
-  transform: scale(1.02);
+  flex: 3.5;
+  transform: scale(1.04);
+  filter: brightness(1);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  z-index: 2;
 }
-
 
 /* =================================
    MOBILE
@@ -324,17 +340,20 @@ body.sage-theme {
 
 @media (max-width: 900px) {
 
-  .stay-top {
-    grid-template-columns: 1fr;
-  }
-
   .stay-gallery {
     flex-direction: column;
+    gap: 16px;
   }
 
-  .stay-gallery img:hover {
+  .stay-gallery img {
+    height: 220px;
     flex: unset;
-    transform: scale(1.02);
+    transform: none;
+    filter: none;
+  }
+
+  .stay-gallery:hover img {
+    filter: none;
   }
 
 }
